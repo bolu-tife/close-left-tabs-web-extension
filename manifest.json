@@ -1,24 +1,35 @@
 {
-    "manifest_version": 3,
-    "name": "Close Left Tabs",
-    "description": "Allows you to close tabs to the left of an active tab",
-    "version": "1.0",
-    "icons": {
-      "16": "images/icon-16.png",
-      "32": "images/icon-32.png",
-      "48": "images/icon-48.png",
-      "128": "images/icon-128.png"
+  "manifest_version": 3,
+  "name": "Close Left Tabs",
+  "description": "Allows you to close tabs to the left of an active tab",
+  "version": "1.0",
+  "icons": {
+    "16": "images/icons/icon-16.png",
+    "32": "images/icons/icon-32.png",
+    "48": "images/icons/icon-48.png",
+    "128": "images/icons/icon-128.png"
+  },
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icons/icon-16.png",
+      "32": "images/icons/icon-32.png",
+      "48": "images/icons/icon-48.png",
+      "128": "images/icons/icon-128.png"
     },
-    "background": {
-        "service_worker": "background.js"
-    },
-    "permissions": ["tabs", "contextMenus"],
-    "commands": {
-      "_execute_action": {
-        "suggested_key": {
-          "default": "Ctrl+L",
-          "mac": "Command+L"
-        }
-      }
+    "default_title": "Close Left tab"
+  },
+  "permissions": ["tabs", "contextMenus"],
+  "commands": {
+    "closeTabsToTheLeftCommand": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Close Tabs to the Left"
     }
   }
+
+}
