@@ -20,6 +20,5 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
 chrome.commands.onCommand.addListener(async command => {
     let tab = await chrome.tabs.query({ active: true, currentWindow: true })
-    console.log(tab, await chrome.tabs.query({ currentWindow: true }))
     if (command === "closeTabsToTheLeftCommand") await closeLeftTabs(tab[0])
 })
